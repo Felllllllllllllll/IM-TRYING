@@ -36,3 +36,21 @@ export const PLATFORMS: PlatformConfig[] = [
   { id: 'facebook', icon: ICONS.Facebook, formats: ['post'] },
   { id: 'youtube', icon: ICONS.YouTube, formats: ['shorts', 'video'] },
 ];
+
+export const PLATFORM_TOOLTIPS = {
+  google: "Sökresultat & SEO-strategi",
+  instagram: "Visuellt innehåll & Reels",
+  tiktok: "Virala korta videos & trender",
+  facebook: "Community & engagemang",
+  youtube: "Video & Shorts"
+};
+
+export const FORMAT_TOOLTIPS: Record<string, string> = {
+  search: "SEO-optimerat innehåll",
+  business: "Företagsprofil & uppdateringar",
+  reel: "9:16 video för maximal spridning",
+  post: "Bild & text för flödet",
+  story: "24h innehåll för engagemang",
+  video: "Landskap eller porträttvideo",
+  shorts: "Korta videos (YouTube Shorts)"
+};

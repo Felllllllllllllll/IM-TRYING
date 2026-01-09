@@ -1,6 +1,7 @@
 import React from 'react';
 import { Platform } from '../types';
-import { PLATFORMS } from '../constants';
+import { PLATFORMS, FORMAT_TOOLTIPS } from '../constants';
+import Tooltip from './Tooltip';
 
 interface FormatSelectorProps {
   platform: Platform;
@@ -16,22 +17,23 @@ const FormatSelector: React.FC<FormatSelectorProps> = ({ platform, selectedForma
   return (
     <div className="flex flex-wrap justify-center gap-4 animate-fadeIn">
       {currentPlatform.formats.map((format) => (
-        <button
-          key={format}
-          onClick={() => onSelect(format)}
-          className={`
-            px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wide
-            transition-all duration-300 border
-            shadow-[0_4px_12px_rgba(0,0,0,0.04)]
-            ${
-              selectedFormat === format
-                ? 'bg-[#1c1c1e] text-white border-transparent scale-105'
-                : 'bg-white/60 text-[#3a3a3c] border-transparent hover:bg-white hover:shadow-md'
-            }
-          `}
-        >
-          {format}
-        </button>
+        <Tooltip key={format} text={FORMAT_TOOLTIPS[format] || format}>
+          <button
+            onClick={() => onSelect(format)}
+            className={`
+              px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wide
+              transition-all duration-300 border
+              shadow-[0_4px_12px_rgba(0,0,0,0.04)]
+              ${
+                selectedFormat === format
+                  ? 'bg-[#1c1c1e] text-white border-transparent scale-105'
+                  : 'bg-white/60 text-[#3a3a3c] border-transparent hover:bg-white hover:shadow-md'
+              }
+            `}
+          >
+            {format}
+          </button>
+        </Tooltip>
       ))}
     </div>
   );

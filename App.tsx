@@ -79,7 +79,7 @@ function App() {
                 value={topic}
                 onChange={(e) => setTopic(e.target.value)}
                 className="w-full p-6 bg-gray-100/30 border border-gray-200/50 rounded-[24px] outline-none text-lg min-h-[160px] focus:ring-2 focus:ring-purple-200 focus:bg-white transition-all resize-none placeholder:text-gray-300 font-medium" 
-                placeholder="Vad vill du skapa idag?"
+                placeholder="Enter your topic here..."
               />
               <button 
                 onClick={handleGenerate}
